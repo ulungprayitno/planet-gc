@@ -1,6 +1,6 @@
 import React from "react";
 import IPlanet from "../../types/Planets";
-import { Box, Grid, Stack, Text } from "@chakra-ui/layout";
+import { Box, Grid, SimpleGrid, Stack, Text } from "@chakra-ui/layout";
 
 type IProps = {
   data: Array<IPlanet>
@@ -17,7 +17,7 @@ const ListPlanets = ( props: IProps ) => {
 
   return (
     <Box mt='76px' p='24px'>
-      <Grid templateColumns="repeat(3, 1fr)" gap={6}>
+      <SimpleGrid columns={{sm: 1, md: 2, lg: 3}} spacing="40px">
         { data && data.map((item, index) => (
           <Box key={index} w="100%" bg="linkedin.100" p='16px' borderRadius='8px' boxShadow='lg' position='relative' cursor='pointer' onClick={getDetail(item.url)}>
               <Text fontSize='32px' fontWeight='bold' mb='16px'>{item.name}</Text>
@@ -47,7 +47,7 @@ const ListPlanets = ( props: IProps ) => {
           </Box>
           ))
         }
-      </Grid>
+      </SimpleGrid>
     </Box>
   );
 };

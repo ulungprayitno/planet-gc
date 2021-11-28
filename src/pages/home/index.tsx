@@ -2,6 +2,15 @@ import React from 'react';
 import IPlanet from '../../types/Planets';
 import PlanetService from '../../services/PlanetService';
 import ListPlanets from '../../components/list-planet';
+import styled from "styled-components";
+
+const Loading = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center
+`;
 
 const HomePage: React.FC = () => {
   const [planets, setPlanets] = React.useState<Array<IPlanet>>([]);
@@ -39,9 +48,9 @@ const HomePage: React.FC = () => {
   }
 
   return <div style={{marginTop: '76px'}}>
-    {planets && (
+    {planets ? (
       <ListPlanets data={planets} />
-    )}
+    ) : <Loading>....Loading</Loading>}
   </div>;
 };
 
