@@ -14,16 +14,26 @@ const Container = styled.div`
 `;
 
 const Logo = styled.p`
-  font-size: 36px;
+  font-size: 40px;
   color: white;
   margin: 0px 24px;
   font-weight: bold;
+  cursor: pointer;
+`;
+
+const Menu = styled.p`
+  cursor: pointer;
+  font-size: 24px;
+  margin: 0px 40px 0px 0px;
+  color: white;
+  padding-left: 32px;
 `;
 
 const Navbar: React.FC = () => {
   return (
     <Container>
-      <Logo>My Planet</Logo>
+      <Logo onClick={() => window.location.href = '/'}>My Planet</Logo>
+      <Menu onClick={() => window.location.href = '/wishlist'}>Wishlist</Menu>
     </Container>
   );
 };

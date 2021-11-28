@@ -4,6 +4,7 @@ import { Switch, Route } from "react-router-dom";
 
 const Home = lazy(() => import('./home'));
 const Detail = lazy(() => import('./detail'));
+const WishList = lazy(() => import('./wishlist'));
 
 const Pages: React.FC = () => {
   return (
@@ -13,6 +14,7 @@ const Pages: React.FC = () => {
         <Suspense fallback="">
             <Route path='/' component={Home} exact></Route>
             <Route path='/detail/:id' component={Detail} exact></Route>
+            <Route path='/wishlist' component={WishList} exact></Route>
         </Suspense>
     </Switch>
     </>

@@ -16,7 +16,7 @@ const ListPlanets = ( props: IProps ) => {
   }
 
   return (
-    <Box mt='76px' p='24px'>
+    <Box p='24px'>
       <SimpleGrid columns={{sm: 1, md: 2, lg: 3}} spacing="40px">
         { data && data.map((item, index) => (
           <Box key={index} w="100%" bg="linkedin.100" p='16px' borderRadius='8px' boxShadow='lg' position='relative' cursor='pointer' onClick={getDetail(item.url)}>
